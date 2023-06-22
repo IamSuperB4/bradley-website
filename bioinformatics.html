@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bradley Knorr</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="bioinformatics.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+        <nav>
+            <ul>
+              <li class="nav-item"><a href="index.html">Home</a></li>
+              <li class="nav-item"><a href="about_me.html">About Me</a></li>
+              <li class="nav-item"><a href="#">Projects</a>
+                <ul>
+                  <li><a href="exoplanets.html">Exoplanets</a></li>
+                  <li><a>Bioinformatics</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a href="experience.html">Experience</a></li>
+            </ul>
+          </nav>
+    </header>
+    
+    <main>
+      <div class="block-border">
+        <div class="block intro">
+            <h1 class="header">Bioinformatics</h1>
+            <p>
+              Bioinformatics is the application of tools of computation and analysis to the capture and interpretation of 
+              biological data. We get to use data science techniques to analyze biological data, such as DNA. I took a 
+              Bioinformatics course during my last quarter of college (CSS 383). We learned how to read biology research 
+              papers, use bioinformatics libraries in Python, and had a quarter-long project to complete. The class 
+              combined both computer science and biology majors, so it was very interesting to be able to work 
+              side-by-side with biologists. My group ended up having 1 other computer science student and 2 biology students. 
+              We helped them with the coding portions and they helped us with the biology research, then we worked together 
+              to complete the project.
+            </p>
+        </div>
+      </div>
+      <div class="block-border">
+        <div class="block desc">
+            <h1 class="section-header">Our Project</h1>
+            <p>
+              The title of our research was “<i>Dopamine Evolution Impacts on Social Group Sizes</i>”. The question we were 
+              trying to solve was “<i>How does the evolution of dopamine receptor proteins correlate with changes in social 
+              group size in mammals?</i>” We thought that since because humans and other mammals release dopamine when we 
+              are around others in our species, there would be a correlation between dopamine evolution and social group 
+              sizes.
+            </p>
+        </div>
+      </div>
+      <div class="block-border">
+        <div class="block desc">
+            <h1 class="section-header">Data and Methods</h1>
+            <p>
+              The National Institutes of Health (NIH) has thousands of genomes sequenced for free use by the community. They 
+              have entire DNA sequences and separate out the different genes; dopamine receptors being one of these genes.
+            </p>
+            <p>To do our research and analysis, we needed pairs of mammals of the same genus and their DNA. With each pair of 
+              mammals, we needed to see the evolutionary differences between them. To calculate this difference, there is an 
+              equation called the <a href="https://bioinformatics.cvr.ac.uk/calculating-dnds-for-ngs-datasets/">dN/dS ratio</a>. 
+              It lets us assign a value to how much each sequence diverges evolutionarily. This dN/dS ratio is determined by 
+              finding where the species share dopamine genes, aligning the gene sequences (bases can be lost or gained over 
+              evolution, but stay in the same place), calculating the dN/dS ratio for each conon (3 DNA bases/letters), then 
+              we create an aggregate score for each pair of genes. This is all done in Python using a combination of our 
+              own code and Python libraries for bioinformatics.</p>
+            <p>
+              Finally, we plotted the social group size difference vs. the dN/dS ratio for each pair of species. If there was 
+              a correlation between the two, we would see it in the graph. We also used the ACTN3 as a control, which is a 
+              muscle gene.
+            </p>
+            <p>
+              The second part of our work was to research the social group sizes of each species. There is no master list with 
+              this information, so we had to scour the internet for research papers with this information.
+            </p>
+        </div>
+      </div>
+      <div class="block-border">
+        <div class="block desc">
+            <h1 class="section-header">Results</h1>
+            <p>
+              Unfortunately, our results did not show a statistically significant correlation between the evolution of dopamine 
+              receptors and social group size. This is sadly a common occurrence in the world of biology and bioinformatics. 
+              Tons of time and money can be spent on research just to get inconclusive results or results against your hypothesis. 
+              However, this is part of the scientific process that leads to some great discoveries. Here are the charts with our 
+              results:
+            </p>
+            <table class="results-table">
+              <thead>
+                <th>Dopamine Genes</th>
+                <th>Removed Zeros</th>
+                <th>Control (ACTN3)</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <img class="plot-picture" src="img/epsilon_social_group_size_difference_vs_dNdS_ratio.png" alt="Bioinformatics graph 1">
+                  </td>
+                  <td>
+                    <img class="plot-picture" src="img/deleted_data_social_group_size_difference_vs_dNdS_ratio.png" alt="Bioinformatics graph 2">
+                  </td>
+                  <td>
+                    <img class="plot-picture" src="img/negative_control_social_group_size_difference_vs_dNdS_ratio.png" alt="Bioinformatics graph control">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+      <div class="block-border">
+        <div class="block references">
+            <h1 class="section-header">References</h1>
+            <p><a href="https://ftp.ncbi.nlm.nih.gov/genomes/genbank/vertebrate_mammalian/">Here</a> is the link to where we got the DNA sequences</p>
+            <p><a href="https://github.com/IamSuperB4/Bioinformatics-Project">Here</a> is the link to the GitHub with our code for this project</p>
+            <p><a href="https://docs.google.com/presentation/d/1BrsHvuku83GnfWnpL4WniGspCz00YDJ_1RmiAQTsVjs/">Here</a> is the Google Slides presentation for our research for a more visual presentation of this project</p>
+        </div>
+      </div>
+    </main>
+	<script src="index.js"></script>
+  </body>
+</html>

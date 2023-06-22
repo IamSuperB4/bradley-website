@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bradley Knorr</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about_me.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+        <nav>
+            <ul>
+              <li class="nav-item"><a href="index.html">Home</a></li>
+              <li class="nav-item"><a href="about_me.html">About Me</a></li>
+              <li class="nav-item"><a href="#">Projects</a>
+                <ul>
+                  <li><a href="exoplanets.html">Exoplanets</a></li>
+                  <li><a href="bioinformatics.html">Bioinformatics</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a href="#">Experience</a></li>
+            </ul>
+          </nav>
+    </header>
+    
+    <main>
+      <div class="block-border">
+        <div class="block intro">
+            <h1 class="header">Experience</h1>
+            <p>
+                The majority of my current professional developer experience come from the Kenworth Trucking Company, a subsidiary of PACCAR. 
+                I built them a website to track diagnostic information on trucks being built in their plants, and a custom project tracking 
+                tool for the advanced manufacturing engineering division.
+            </p>
+        </div>
+      </div>
+      <div class="block-border">
+        <div class="block habitable-desc">
+            <h1 class="section-header">Kenworth Trucking Co. – Software Developer – Chassis Chaser - Kirkland, WA - August 2019 - December 2022</h1>
+            <p>
+                During my time at the University of Washington, I worked at Kenworth as a contracted software developer. Being a contractor 
+                allowed flexibility in my work hours during school. I worked part-time during school, and full-time during breaks.
+            </p>
+            <p>
+                I was tasked to build a website, called Chassis Chaser, that helped Paccar’s plants around the world have up-to-date diagnostic 
+                information about all the trucks on the factory line. I was able to provide a wealth of information to diagnosticians, managers, 
+                engineers, and data analysts. Some of the key information I tracked was the VIN, electronic control units (ECUs), their software 
+                parts and software version, programming tests completed at stations on the line, and the current location of each chassis. Across 
+                all 7 plants there are a few hundred trucks built per day. Thanks to Chassis Chaser, diagnosticians went from searching through a 
+                bunch of XML log files manually to just searching for a specific chassis on the website to find the information they needed. A 
+                15–60-minute process turned into a 10 second process, creating immense time savings for people in the plants.
+            </p>
+            <p>
+                Chassis Chaser has 4 key parts: the Angular frontend, a .NET Core API, a SQL database, and a .NET Core service that runs on a server 
+                collecting real-time chassis data. All of this was designed and built from scratch. I also have to thank my mentors from Paccar’s IT 
+                department for helping me throughout the process: Matt and Isaac.
+            </p>
+            <p>
+                The first part of the process was to collect requirements for exactly what data and features the stakeholders wanted. I had meetings 
+                with key diagnosticians, testers, managers, and engineers who would use Chassis Chaser on a daily basis. Everyone wanted a variety 
+                of features, some feasible and some not, some critical and some miscellaneous. I continued these meetings until we had a list of 
+                requirements with priorities and time estimates.
+            </p>
+            <p>
+                [This page is still under development…]
+            </p>
+        </div>
+      </div>
+    </main>
+	<script src="index.js"></script>
+  </body>
+</html>

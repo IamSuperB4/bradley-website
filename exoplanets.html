@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bradley Knorr</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="exoplanets.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+        <nav>
+            <ul>
+              <li class="nav-item"><a href="index.html">Home</a></li>
+              <li class="nav-item"><a href="about_me.html">About Me</a></li>
+              <li class="nav-item"><a href="#">Projects</a>
+                <ul>
+                  <li><a>Exoplanets</a></li>
+                  <li><a href="bioinformatics.html">Bioinformatics</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a href="experience.html">Experience</a></li>
+            </ul>
+          </nav>
+    </header>
+    
+    <main>
+      <div class="block-border">
+        <div class="block intro">
+            <h1 class="header">Exoplanet Analysis</h1>
+            <p>
+              One of the most popular topics in astronomy is the hunt for exoplanets and potential life on other planets.
+              NASA currently has over 5,000 documented exoplanets and counting. A small percentage of those planets are in
+              their star’s habitable zone, and an even smaller percentage of those are suitable for life. The
+              TRAPPIST and several Kepler solar systems have been widely touted to have the potential for life. My project
+              partner, Ani, and I wanted to design a system that could use the information NASA’s exoplanet database
+              provides us to help us find which planets fit the criteria for life.
+            </p>
+        </div>
+      </div>
+      <div class="block-border">
+        <div class="block habitable-desc">
+            <h1 class="section-header">Habitable Zone  - Part 1</h1>
+            <p>
+              The first step to determine if a planet is habitable is to figure out if a planet is in its star’s habitable 
+              zone. There are two processes that can be taken to determine if a planet is in the habitable zone. The first 
+              way is to simply use a star’s luminosity and put it against the orbital distance of the planet, as described
+              by <a href="https://www.planetarybiology.com/calculating_habitable_zone.html">this</a> website. Luckily, both of these 
+              features were provided by the NASA database. With this data, I made a formula that produces a number we can 
+              use to determine if it is in the habitable range. We had data in the form of the log of solar luminosities 
+              (L☉) and astronomical units (AU, the distance the earth is from the sun):</p>
+            <table class="equation">
+              <tr>
+                <td>
+                  &nbsp;
+                </td>
+                <td>
+                  ___
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:0px; font-size:larger">
+                  Converted Distance = r / &radic;
+                </td>
+                <td style="padding:0px;">
+                  10<sup>L</sup>
+                </td>
+              </tr>
+            </table>
+            <p>
+              There is no consensus as to what exactly is the habitable zone. I wanted to be generous, so I took the 
+              widest range I could find, which was 0.9 to 1.37. Essentially, these numbers represent mathematically converting 
+              the alien solar system units to our solar system’s units, and then determining the habitable zone. So, the 
+              habitable zone is 90% of the earth’s distance to the sun to 137% of our distance. Below, there is a Tableau 
+              visualization of this. Orange points represent the planets in this habitable zone.
+            </p>
+        </div>
+      </div>
+      <div class="block-border">
+        <div class="block habitable-desc">
+            <h1 class="section-header">Habitable Zone  - Part 2</h1>
+            <p>
+              The second way to determine if a planet is in the habitable zone is to determine the surface temperature of 
+              the planet. We define habitable as the planet’s surface being able to have liquid water, so habitable is 
+              between 0-100°C. The first step in this process ended up being far more difficult than we thought. We used 
+              <a href="https://en.wikipedia.org/wiki/Planetary_equilibrium_temperature">this</a> Wikipedia page to help us 
+              with this. It ended up being a complex equation using the star’s radius, star’s temperature, and the planet's 
+              orbital radius (r) to determine the energy flux (F) in that part of space, which can then be converted to 
+              effective surface temperature (T). Effective temperature is held in this equation:
+            </p>
+            <p>
+              σ<span style="color: red"><b>T</b></span><sup>4</sup> = F = L/(4πr<sup>2</sup>)
+            </p>
+            <p>
+              We ended up finding several dozen planets in the habitable zone. Here is the chart we created to show which 
+              planets are habitable based on the surface tempurature calculation. Generally, the mass of the star vs. the
+              planet’s distance from the star has a correlation with whether the planet is in the habitable zone, so we
+              created that plot. One caveat to this method is that planets can have an atmosphere, which can trap heat, 
+              changing its surface tempurature. It tends to lean towards labeling warmer planets habitable compared to the 
+              previous method.
+            </p>
+            <img class="plot-picture" src="img/scatter_habitable.png" alt="habitable-scatter-plot">
+          </div>
+      </div>
+      <div class="block-border">
+        <div class="block other-desc">
+            <h1 class="section-header">Other Factors</h1>
+            <p>
+              There are other factors to consider when determining if a planet is suitable for life. One is the 
+              <b><u>density</u></b> of the planet, which would signify a gas planet or a rocky planet (&gt;2.5 = rocky). The 
+              <b><u>radius</u></b> (0.5 to 2.5) and <b><u>mass</u></b> (0.3 to 10) of the planet is important. Too big or small 
+              affects the gravity of the planet. The last feature we checked was the <b><u>eccentricity</u></b> (&lt;0.25) of 
+              the planet’s orbit. The more elongated an orbit, the more the temperature varies during the orbit, making 
+              conditions more hostile for life. I built a Tableau visualization that shows which planets are in the habitable 
+              zone (in orange), as well as meets the other habitability conditions. Circles represent meeting the basic criteria 
+              for life, and ‘+’ represents missing one attribute.
+            </p>
+        </div>
+      </div>
+      <div class="block-border">
+        <div class="block viz">
+          <h1 class="section-header">Tableau Visualization</h1>
+          <p>
+            I built a Tableau visualization that shows which planets are in the habitable zone (in orange), as well as meets
+            the other habitability conditions. Circles represent meeting the basic criteria for life, and ‘+’ represents
+            missing one attribute.
+          </p>
+          <div class="tableau-container">
+            <div class='tableauPlaceholder' id='viz1684199606680' style='position: relative'>
+              <noscript>
+                <a href='#'>
+                  <img alt='Habitable Zone ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ex&#47;Exoplanets_16840226369300&#47;HabitableZone&#47;1_rss.png' style='border: none' />
+                </a>
+              </noscript>
+              <object class='tableauViz'  style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='Exoplanets_16840226369300&#47;HabitableZone' />
+                <param name='tabs' value='no' /><param name='toolbar' value='yes' />
+                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ex&#47;Exoplanets_16840226369300&#47;HabitableZone&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en-US' />
+                <param name='filter' value='publish=yes' />
+              </object>
+            </div>
+            <script type='text/javascript'>var divElement = document.getElementById('viz1684199606680');
+              var vizElement = divElement.getElementsByTagName('object')[0];
+              vizElement.style.width='100%';
+              vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+              var scriptElement = document.createElement('script');
+              scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+              vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+          </div>
+        </div>
+      </div>
+      <div class="block-border">
+        <div class="block references">
+            <h1 class="section-header">References</h1>
+            <p><a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=PSCompPars">Here</a> is the link to where we got the exoplanet data from NASA</p>
+            <p><a href="https://github.com/aniavetian/CSE163Project/tree/bradley-update">Here</a> is the link to the GitHub with our code for this project</p>
+        </div>
+      </div>
+    </main>
+	<script src="index.js"></script>
+  </body>
+</html>

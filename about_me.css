@@ -1,0 +1,34 @@
+body {
+    background-image: url("img/Blue_Nebula_1.png");
+    background-repeat: repeat;
+}
+
+.picture {
+    width: 100%;
+    margin: auto;
+    border: 3px solid purple;
+    border-radius: 1em;
+}
+
+.full-picture {
+    width: 75%;
+}
+
+.equation {
+    border-spacing: 0px;
+    border-width: 0px;
+    padding-left: 12.5%;
+    padding-bottom: 2.5em;
+    margin: 0;
+    font-size: 1.3em;
+}
+
+.image-table {
+    width: 75%;
+    margin: auto;
+    font-size: 2em;
+}
+
+td {
+    padding: 0 1em;
+}

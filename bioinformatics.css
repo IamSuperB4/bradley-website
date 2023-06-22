@@ -1,0 +1,76 @@
+body {
+    background-image: url("img/biology.jpg");
+    background-repeat: repeat;
+}
+
+nav ul {
+    background-color: rgb(43, 170, 96);
+    background: linear-gradient(left, rgb(43, 170, 96) 0%, rgb(129, 204, 104) 66%, rgb(43, 170, 96) 100%);
+    background: -moz-linear-gradient(left, rgb(43, 170, 96) 0%, rgb(129, 204, 104) 66%, rgb(43, 170, 96) 100%);
+    background: -webkit-linear-gradient(left, rgb(43, 170, 96) 0%,rgb(129, 204, 104) 66%, rgb(43, 170, 96) 100%);
+}
+
+.nav-item {
+    background: linear-gradient(107.2deg, rgb(18, 38, 170) 0%, rgb(0, 187, 180) 50%, rgb(18, 38, 170) 100%);
+    float: left;
+}
+
+nav ul ul li {
+    background-color: rgb(43, 170, 96);
+    background: linear-gradient(left, rgb(43, 170, 96) 0%, rgb(129, 204, 104) 66%, rgb(43, 170, 96) 100%);
+    background: -moz-linear-gradient(left, rgb(43, 170, 96) 0%, rgb(129, 204, 104) 66%, rgb(43, 170, 96) 100%);
+    background: -webkit-linear-gradient(left, rgb(43, 170, 96) 0%,rgb(129, 204, 104) 66%, rgb(43, 170, 96) 100%);
+}
+
+.header {
+    background-image: url(img/biology.jpg);
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 6em;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Steelfish Rg', 'helvetica neue',
+                helvetica, arial, sans-serif;
+    font-weight: 800;
+    -webkit-font-smoothing: antialiased;
+	-webkit-text-stroke: 4px blue;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+/* Content blocks */
+
+.block-border {
+    margin: auto;
+    width: 70%;
+    padding: 1em;
+    position: relative;
+    border-radius: 2em;
+    background-color: rgb(43, 170, 96);
+    background: linear-gradient(left, rgb(43, 170, 96) 0%, rgb(129, 204, 104) 66%, rgb(43, 170, 96) 100%);
+    background: -moz-linear-gradient(left, rgb(43, 170, 96) 0%, rgb(129, 204, 104) 66%, rgb(43, 170, 96) 100%);
+    background: -webkit-linear-gradient(left, rgb(43, 170, 96) 0%,rgb(129, 204, 104) 66%, rgb(43, 170, 96) 100%);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 19px 38px, rgba(0, 0, 0, 0.44) 0px 15px 12px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.plot-picture {
+    margin: auto;
+    border: 3px solid purple;
+    border-radius: 1em;
+    width: 100%;
+}
+
+.results-table {
+    width: 75%;
+    margin: auto;
+    font-size: 2em;
+}
+
+td {
+    padding: 0 1em;
+}
+
